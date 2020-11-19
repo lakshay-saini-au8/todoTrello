@@ -1,0 +1,35 @@
+.home {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.home .column {
+  width: 30%;
+}
+
+.droppable-col {
+  width: 100%;
+  background: grey;
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.item {
+  margin-bottom: 10px;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  background: grey;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
