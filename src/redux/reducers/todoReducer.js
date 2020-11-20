@@ -1,29 +1,16 @@
-import { v4 } from "uuid";
 import { todoVar } from "../actionTypes";
-const item1 = {
-  id: v4(),
-  name: "first",
-};
-const item2 = {
-  id: v4(),
-  name: "sec",
-};
-const item3 = {
-  id: v4(),
-  name: "third",
-};
 const initialState = {
   todo: {
     title: "Todo",
-    item: [item1],
+    item: [],
   },
   progress: {
     title: "In Progress",
-    item: [item2],
+    item: [],
   },
   done: {
     title: "Completed",
-    item: [item3],
+    item: [],
   },
 };
 

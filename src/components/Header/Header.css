@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.todo {
+  background-color: #8ea1ad;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.progress {
+  background-color: #00a8ff;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 400;
+  color: #fff;
+}
+.done {
+  background-color: #65d300;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 400;
+  color: #fff;
+}

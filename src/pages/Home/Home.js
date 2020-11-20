@@ -27,26 +27,33 @@ const Home = ({ restate, addItemTodo }) => {
     );
     updateSate(restate);
   };
-  const addItem = () => {
+  const addItem = (e) => {
+    e.preventDefault();
+    if (text.trim() === "") {
+      alert("Enter todo");
+      return;
+    }
     addItemTodo({ id: v4(), name: text });
     setText("");
   };
   return (
     <div>
       <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button onClick={addItem}>Add</button>
+        <form onSubmit={addItem} className="todoinput">
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button type="submit">Add Todo</button>
+        </form>
       </div>
       <div className="home">
         <DragDropContext onDragEnd={handleDragEnd}>
           {_.map(restate, (data, key) => {
             return (
               <div className={"column"} key={key}>
-                <h3>{data.title}</h3>
+                <h3 className={key}>{data.title}</h3>
                 <Droppable droppableId={key}>
                   {(provided) => {
                     return (
@@ -62,10 +69,12 @@ const Home = ({ restate, addItemTodo }) => {
                               index={index}
                               draggableId={el.id}
                             >
-                              {(provided) => {
+                              {(provided, snapshot) => {
                                 return (
                                   <div
-                                    className={"item"}
+                                    className={`item ${
+                                      snapshot.isDragging && "dragging"
+                                    }`}
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
